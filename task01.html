@@ -23,13 +23,9 @@
   <main>
     <div class="task_wrapper">
       <h2>Tasks</h2>
-      <div id="todo_list">
-        <div class="todo_left">
-          <input type="checkbox">
-          test
-        </div>
-        <button>삭제</button>
-      </div>
+      <ul id="todo_list">
+
+      </ul>
       <button id="addbtn">할일 추가</button>
     </div>
   </main>
@@ -39,17 +35,18 @@
   const add = document.querySelector("#addbtn");
 
   add.onclick = function(){
-    const todoinput = prompt('추가할 할일을 입력하세요');
-    const todoitem = document.createElement("div");
-    const todotext = document.createElement("span");
-    todotext.textContent = todoinput;
-    const delbtn = document.createElement("button");
+    let todoinput = prompt('추가할 할일을 입력하세요');
+    const todoli = document.createElement("li");
+    todoli.classList.add("todo_list_li");
+    todoli.textContent = todoinput;
+    let delbtn = document.createElement("button");
     delbtn.textContent = "삭제";
     delbtn.onclick = function(){
       this.parentElement.remove();
     };
+    todoli.appenChild(delbtn);
 
-    document.getElementById("todo_list").appendChild(todoitem);
+    todo.appendChild(todoli);
   }
 </script>
 </html>

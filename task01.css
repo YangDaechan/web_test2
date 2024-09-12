@@ -46,6 +46,11 @@ main{
 }
 #todo_list{
   display: flex;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  /* width: 100%; */
+}
+.todo_list_li{
+  display: flex;
   justify-content: space-between;
-  width: 100%;
 }
